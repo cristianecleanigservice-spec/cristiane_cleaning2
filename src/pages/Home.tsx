@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import {
   Sparkles,
   ShieldCheck,
@@ -41,10 +40,7 @@ const businessJsonLd = {
   telephone: "+1-555-123-4567",
   email: "hello@cristianecleaning.com",
   priceRange: "$$",
-  address: {
-    "@type": "PostalAddress",
-    addressCountry: "US",
-  },
+  address: { "@type": "PostalAddress", addressCountry: "US" },
   areaServed: "United States",
   aggregateRating: {
     "@type": "AggregateRating",
@@ -52,33 +48,6 @@ const businessJsonLd = {
     reviewCount: "187",
   },
 };
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Cristiane Cleaning Services | Trusted House Cleaning You'll Love" },
-      {
-        name: "description",
-        content:
-          "Reliable, detailed and affordable house cleaning by Cristiane Cleaning Services. Deep cleans, move-in/out, recurring service. Fully insured. 5-star rated. Get a free estimate today.",
-      },
-      { property: "og:title", content: "Cristiane Cleaning Services" },
-      {
-        property: "og:description",
-        content:
-          "Professional house cleaning you can trust. Insured, detailed, and 5-star rated. Get your free estimate.",
-      },
-      { property: "og:type", content: "website" },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(businessJsonLd),
-      },
-    ],
-  }),
-  component: Home,
-});
 
 const services = [
   { icon: HomeIcon, title: "House Cleaning", desc: "Top-to-bottom regular cleans that keep every room fresh and guest-ready." },
@@ -99,21 +68,9 @@ const reasons = [
 ];
 
 const reviews = [
-  {
-    name: "Megan R.",
-    city: "Orlando, FL",
-    text: "Cristiane's team is the real deal. Our house has never looked this good — they even cleaned the inside of my oven without me asking.",
-  },
-  {
-    name: "David & Priya K.",
-    city: "Plano, TX",
-    text: "We've tried four cleaning companies. This is the first one we'll keep. Punctual, friendly, and the bathrooms are honestly hotel-level.",
-  },
-  {
-    name: "Samantha L.",
-    city: "Charlotte, NC",
-    text: "Booked a move-out clean and got my full deposit back. The landlord literally asked who we used. Worth every dollar.",
-  },
+  { name: "Megan R.", city: "Orlando, FL", text: "Cristiane's team is the real deal. Our house has never looked this good — they even cleaned the inside of my oven without me asking." },
+  { name: "David & Priya K.", city: "Plano, TX", text: "We've tried four cleaning companies. This is the first one we'll keep. Punctual, friendly, and the bathrooms are honestly hotel-level." },
+  { name: "Samantha L.", city: "Charlotte, NC", text: "Booked a move-out clean and got my full deposit back. The landlord literally asked who we used. Worth every dollar." },
 ];
 
 const areas = [
@@ -121,9 +78,13 @@ const areas = [
   "Raleigh", "Nashville", "Dallas", "Jacksonville", "Houston", "Phoenix",
 ];
 
-function Home() {
+export default function Home() {
   return (
     <main id="top" className="bg-background text-foreground">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
+      />
       <Navbar />
 
       {/* HERO */}
@@ -148,17 +109,11 @@ function Home() {
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <a
-                href="#quote"
-                className="group inline-flex items-center gap-2 rounded-full bg-secondary px-7 py-4 text-sm font-semibold text-secondary-foreground shadow-glow transition hover:brightness-110"
-              >
+              <a href="#quote" className="group inline-flex items-center gap-2 rounded-full bg-secondary px-7 py-4 text-sm font-semibold text-secondary-foreground shadow-glow transition hover:brightness-110">
                 Get Free Estimate
                 <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </a>
-              <a
-                href="tel:+15551234567"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-4 text-sm font-semibold text-foreground shadow-soft transition hover:border-primary hover:text-secondary"
-              >
+              <a href="tel:+15551234567" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-4 text-sm font-semibold text-foreground shadow-soft transition hover:border-primary hover:text-secondary">
                 <Phone className="h-4 w-4 text-accent" /> (555) 123-4567
               </a>
             </div>
@@ -178,30 +133,20 @@ function Home() {
 
           <div className="relative lg:col-span-5">
             <div className="relative overflow-hidden rounded-[2rem] shadow-lifted">
-              <img
-                src={heroImg}
-                alt="Bright, immaculately clean modern living room"
-                width={1600}
-                height={1200}
-                className="aspect-[4/5] w-full object-cover"
-              />
+              <img src={heroImg} alt="Bright, immaculately clean modern living room" width={1600} height={1200} className="aspect-[4/5] w-full object-cover" />
               <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-foreground/40 to-transparent" />
             </div>
 
-            {/* Floating review card */}
             <div className="absolute -bottom-6 -left-4 hidden max-w-[260px] rounded-2xl border border-border bg-card p-4 shadow-card sm:block">
               <div className="flex items-center gap-1 text-accent">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="h-4 w-4 fill-current" />
                 ))}
               </div>
-              <p className="mt-2 text-sm leading-snug text-foreground">
-                "Best cleaning service I've ever hired — by a mile."
-              </p>
+              <p className="mt-2 text-sm leading-snug text-foreground">"Best cleaning service I've ever hired — by a mile."</p>
               <p className="mt-2 text-xs text-muted-foreground">— Megan R., Orlando FL</p>
             </div>
 
-            {/* Floating badge */}
             <div className="absolute -right-4 top-8 hidden rounded-2xl border border-border bg-card px-4 py-3 shadow-card sm:flex sm:items-center sm:gap-3">
               <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent/15 text-accent">
                 <Leaf className="h-5 w-5" />
@@ -214,7 +159,6 @@ function Home() {
           </div>
         </div>
 
-        {/* Trust strip */}
         <div className="border-y border-border bg-surface/60">
           <div className="container-page grid grid-cols-2 gap-6 py-6 text-center sm:grid-cols-4">
             {[
@@ -248,10 +192,7 @@ function Home() {
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
-            <article
-              key={s.title}
-              className="group relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-border bg-card p-7 shadow-soft transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-card"
-            >
+            <article key={s.title} className="group relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-border bg-card p-7 shadow-soft transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-card">
               <span className="grid h-12 w-12 place-items-center rounded-xl bg-primary-soft text-secondary transition group-hover:bg-secondary group-hover:text-secondary-foreground">
                 <s.icon className="h-6 w-6" strokeWidth={1.8} />
               </span>
@@ -293,25 +234,16 @@ function Home() {
         </div>
       </section>
 
-      {/* WHY US — split with portrait */}
+      {/* WHY US */}
       <section id="why-us" className="container-page py-20 md:py-28">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <div className="sticky top-28">
               <div className="relative overflow-hidden rounded-[2rem] shadow-card">
-                <img
-                  src={cleanerImg}
-                  alt="Cristiane Cleaning Services professional cleaner"
-                  width={1000}
-                  height={1200}
-                  loading="lazy"
-                  className="aspect-[4/5] w-full object-cover"
-                />
+                <img src={cleanerImg} alt="Cristiane Cleaning Services professional cleaner" width={1000} height={1200} loading="lazy" className="aspect-[4/5] w-full object-cover" />
               </div>
               <div className="mt-6 rounded-2xl border border-border bg-card p-5 shadow-soft">
-                <p className="font-display text-lg italic text-foreground">
-                  "I treat every home like it's my own. That's the standard, always."
-                </p>
+                <p className="font-display text-lg italic text-foreground">"I treat every home like it's my own. That's the standard, always."</p>
                 <p className="mt-3 text-sm font-semibold text-secondary">— Cristiane, Founder</p>
               </div>
             </div>
@@ -329,10 +261,7 @@ function Home() {
 
             <div className="mt-10 grid gap-5 sm:grid-cols-2">
               {reasons.map((r) => (
-                <div
-                  key={r.title}
-                  className="rounded-2xl border border-border bg-card p-6 shadow-soft transition hover:border-accent/40"
-                >
+                <div key={r.title} className="rounded-2xl border border-border bg-card p-6 shadow-soft transition hover:border-accent/40">
                   <span className="grid h-11 w-11 place-items-center rounded-xl bg-accent/15 text-accent">
                     <r.icon className="h-5 w-5" strokeWidth={1.9} />
                   </span>
@@ -367,14 +296,9 @@ function Home() {
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {reviews.map((r) => (
-              <figure
-                key={r.name}
-                className="relative flex flex-col gap-5 rounded-2xl border border-border bg-card p-7 shadow-soft"
-              >
+              <figure key={r.name} className="relative flex flex-col gap-5 rounded-2xl border border-border bg-card p-7 shadow-soft">
                 <Quote className="h-7 w-7 text-primary-soft" fill="currentColor" />
-                <blockquote className="text-base leading-relaxed text-foreground">
-                  "{r.text}"
-                </blockquote>
+                <blockquote className="text-base leading-relaxed text-foreground">"{r.text}"</blockquote>
                 <figcaption className="mt-auto flex items-center justify-between border-t border-border pt-4">
                   <div>
                     <p className="text-sm font-semibold">{r.name}</p>
@@ -411,10 +335,7 @@ function Home() {
               </p>
             </div>
             <div className="md:col-span-4 md:text-right">
-              <a
-                href="#quote"
-                className="inline-flex items-center gap-2 rounded-full bg-card px-7 py-4 text-sm font-semibold text-secondary shadow-lifted transition hover:bg-accent hover:text-accent-foreground"
-              >
+              <a href="#quote" className="inline-flex items-center gap-2 rounded-full bg-card px-7 py-4 text-sm font-semibold text-secondary shadow-lifted transition hover:bg-accent hover:text-accent-foreground">
                 Claim Your Discount <ArrowRight className="h-4 w-4" />
               </a>
             </div>
@@ -427,16 +348,11 @@ function Home() {
         <div className="grid gap-10 rounded-[2rem] border border-border bg-card p-10 shadow-soft md:grid-cols-12 md:p-14">
           <div className="md:col-span-5">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-secondary">Service area</p>
-            <h2 className="mt-3 text-balance text-3xl md:text-4xl">
-              Proudly serving local families.
-            </h2>
+            <h2 className="mt-3 text-balance text-3xl md:text-4xl">Proudly serving local families.</h2>
             <p className="mt-5 text-muted-foreground">
               We serve homeowners, renters and property managers across the metro. Don't see your city? Call us — we may still be able to help.
             </p>
-            <a
-              href="tel:+15551234567"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-secondary"
-            >
+            <a href="tel:+15551234567" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-secondary">
               <Phone className="h-4 w-4" /> Check availability — (555) 123-4567
             </a>
           </div>
@@ -471,11 +387,7 @@ function Home() {
                 { icon: Clock, label: "Hours", value: "Mon–Sat · 7am to 7pm" },
                 { icon: MapPin, label: "Serving", value: "Homeowners across the U.S." },
               ].map((c) => (
-                <a
-                  key={c.label}
-                  href={c.href ?? "#"}
-                  className="flex items-start gap-4 rounded-2xl border border-border bg-card p-4 shadow-soft transition hover:border-primary/40"
-                >
+                <a key={c.label} href={c.href ?? "#"} className="flex items-start gap-4 rounded-2xl border border-border bg-card p-4 shadow-soft transition hover:border-primary/40">
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary-soft text-secondary">
                     <c.icon className="h-5 w-5" />
                   </span>
@@ -526,9 +438,7 @@ function Home() {
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-foreground">Services</p>
             <ul className="mt-4 space-y-2.5 text-sm text-muted-foreground">
               {services.slice(0, 6).map((s) => (
-                <li key={s.title}>
-                  <a href="#services" className="hover:text-secondary">{s.title}</a>
-                </li>
+                <li key={s.title}><a href="#services" className="hover:text-secondary">{s.title}</a></li>
               ))}
             </ul>
           </div>
