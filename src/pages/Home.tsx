@@ -33,6 +33,7 @@ import beforeKitchen from "@/assets/before-kitchen.jpg";
 import afterKitchen from "@/assets/after-kitchen.jpg";
 import beforeBath from "@/assets/before-bathroom.jpg";
 import afterBath from "@/assets/after-bathroom.jpg";
+import logoImg from "@/assets/logo.png";
 
 const businessJsonLd = {
   "@context": "https://schema.org",
@@ -387,15 +388,9 @@ export default function Home() {
       <footer className="border-t border-border bg-card">
         <div className="container-page grid gap-10 py-14 md:grid-cols-12">
           <div className="md:col-span-4">
-            <div className="flex items-center gap-2.5">
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-[var(--gradient-brand)] text-primary-foreground">
-                <Sparkles className="h-5 w-5" />
-              </span>
-              <span className="flex flex-col leading-tight">
-                <span className="font-display text-lg">Cristiane</span>
-                <span className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Cleaning Services</span>
-              </span>
-            </div>
+            <a href="#top">
+              <img src={logoImg} alt="Cristiane Cleaning Services" className="h-20 w-auto" />
+            </a>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               A family-led residential cleaning company devoted to making American homes shine — one room at a time.
             </p>

@@ -1,5 +1,6 @@
-import { Phone, Sparkles, Menu, X } from "lucide-react";
+import { Phone, Menu, X } from "lucide-react";
 import { useState } from "react";
+import logoImg from "@/assets/logo.png";
 
 const links = [
   { href: "#services", label: "Services" },
@@ -15,14 +16,8 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-xl">
       <div className="container-page flex h-18 items-center justify-between gap-6 py-4">
-        <a href="#top" className="flex items-center gap-2.5">
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-[var(--gradient-brand)] text-primary-foreground shadow-soft">
-            <Sparkles className="h-5 w-5" strokeWidth={2.25} />
-          </span>
-          <span className="flex flex-col leading-tight">
-            <span className="font-display text-lg text-foreground">Cristiane</span>
-            <span className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Cleaning Services</span>
-          </span>
+        <a href="#top" className="flex items-center">
+          <img src={logoImg} alt="Cristiane Cleaning Services" className="h-14 w-auto" />
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex">
