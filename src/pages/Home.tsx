@@ -29,10 +29,8 @@ import { BeforeAfter } from "@/components/site/BeforeAfter";
 import { QuoteForm } from "@/components/site/QuoteForm";
 import heroImg from "@/assets/hero-living-room.jpg";
 import cleanerImg from "@/assets/cleaner-portrait.jpeg";
-import beforeKitchen from "@/assets/before-kitchen.jpg";
-import afterKitchen from "@/assets/after-kitchen.jpg";
-import beforeBath from "@/assets/before-bathroom.jpg";
-import afterBath from "@/assets/after-bathroom.jpg";
+import beforeQuarto from "@/assets/quarto-antes.jpeg";
+import afterQuarto from "@/assets/quarto-depois.jpeg";
 import logoImg from "@/assets/logo.png";
 
 const businessJsonLd = {
@@ -224,15 +222,9 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2">
-            <div>
-              <BeforeAfter before={beforeKitchen} after={afterKitchen} alt="Kitchen" />
-              <p className="mt-3 text-sm font-medium text-foreground/80">Kitchen — Deep Clean · 4 hrs</p>
-            </div>
-            <div>
-              <BeforeAfter before={beforeBath} after={afterBath} alt="Bathroom" />
-              <p className="mt-3 text-sm font-medium text-foreground/80">Master Bathroom — Move-Out · 3 hrs</p>
-            </div>
+          <div className="mt-14 mx-auto max-w-2xl">
+            <BeforeAfter before={beforeQuarto} after={afterQuarto} alt="Bedroom" />
+            <p className="mt-3 text-sm font-medium text-foreground/80 text-center">Bedroom — Deep Clean</p>
           </div>
         </div>
       </section>
