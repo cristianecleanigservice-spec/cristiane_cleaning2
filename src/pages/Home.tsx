@@ -241,6 +241,7 @@ export default function Home() {
                 <p className="mt-3 text-sm font-medium text-foreground/80 text-center">{item.label}</p>
               </div>
             ))}
+          </div>
         </div>
       </section>
 
