@@ -38,7 +38,7 @@ const businessJsonLd = {
   name: "Cristiane Cleaning Services",
   image: "/og-image.jpg",
   telephone: "+1-659-281-4098",
-  email: "hello@cristianecleaning.com",
+  email: "contact@cristianecleaningservice.com",
   priceRange: "$$",
   address: { "@type": "PostalAddress", streetAddress: "2205 Inverness Landing", addressLocality: "Birmingham", addressRegion: "AL", addressCountry: "US" },
   areaServed: "United States",
@@ -356,7 +356,7 @@ export default function Home() {
             <div className="mt-10 space-y-5">
               {[
                 { icon: Phone, label: "Call or text", value: "(659) 281-4098", href: "tel:+16592814098" },
-                { icon: Mail, label: "Email", value: "hello@cristianecleaning.com", href: "mailto:hello@cristianecleaning.com" },
+                { icon: Mail, label: "Email", value: "contact@cristianecleaningservice.com", href: "mailto:contact@cristianecleaningservice.com" },
                 { icon: Clock, label: "Hours", value: "Mon–Sat · 7am to 7pm" },
                 { icon: MapPin, label: "Serving", value: "Homeowners across the U.S." },
               ].map((c) => (
@@ -430,7 +430,7 @@ export default function Home() {
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-foreground">Contact</p>
             <ul className="mt-4 space-y-2.5 text-sm text-muted-foreground">
               <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-accent" /> (659) 281-4098</li>
-              <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-accent" /> hello@cristianecleaning.com</li>
+              <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-accent" /> contact@cristianecleaningservice.com</li>
               <li className="flex items-center gap-2"><Clock className="h-4 w-4 text-accent" /> Mon–Sat · 7am–7pm</li>
             </ul>
           </div>
