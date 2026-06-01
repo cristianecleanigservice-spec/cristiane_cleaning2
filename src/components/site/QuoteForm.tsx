@@ -58,7 +58,7 @@ export function QuoteForm() {
         </div>
         <div>
           <label className={label} htmlFor="phone">Phone</label>
-          <input id="phone" name="phone" type="tel" className={field} placeholder="(555) 123-4567" />
+          <input id="phone" name="phone" type="tel" className={field} placeholder="(659) 281-4098" />
           {errors.phone && <p className="mt-1 text-xs text-destructive">{errors.phone}</p>}
         </div>
       </div>

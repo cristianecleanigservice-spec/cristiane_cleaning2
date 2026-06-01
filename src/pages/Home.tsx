@@ -37,10 +37,10 @@ const businessJsonLd = {
   "@type": "HouseCleaningService",
   name: "Cristiane Cleaning Services",
   image: "/og-image.jpg",
-  telephone: "+1-555-123-4567",
+  telephone: "+1-659-281-4098",
   email: "hello@cristianecleaning.com",
   priceRange: "$$",
-  address: { "@type": "PostalAddress", addressCountry: "US" },
+  address: { "@type": "PostalAddress", streetAddress: "2205 Inverness Landing", addressLocality: "Birmingham", addressRegion: "AL", addressCountry: "US" },
   areaServed: "United States",
   aggregateRating: {
     "@type": "AggregateRating",
@@ -68,14 +68,14 @@ const reasons = [
 ];
 
 const reviews = [
-  { name: "Megan R.", city: "Orlando, FL", text: "Cristiane's team is the real deal. Our house has never looked this good — they even cleaned the inside of my oven without me asking." },
-  { name: "David & Priya K.", city: "Plano, TX", text: "We've tried four cleaning companies. This is the first one we'll keep. Punctual, friendly, and the bathrooms are honestly hotel-level." },
-  { name: "Samantha L.", city: "Charlotte, NC", text: "Booked a move-out clean and got my full deposit back. The landlord literally asked who we used. Worth every dollar." },
+  { name: "Megan R.", city: "Birmingham, AL", text: "Cristiane's team is the real deal. Our house has never looked this good — they even cleaned the inside of my oven without me asking." },
+  { name: "David & Priya K.", city: "Hoover, AL", text: "We've tried four cleaning companies. This is the first one we'll keep. Punctual, friendly, and the bathrooms are honestly hotel-level." },
+  { name: "Samantha L.", city: "Vestavia Hills, AL", text: "Booked a move-out clean and got my full deposit back. The landlord literally asked who we used. Worth every dollar." },
 ];
 
 const areas = [
-  "Orlando", "Tampa", "Charlotte", "Plano", "Austin", "Atlanta",
-  "Raleigh", "Nashville", "Dallas", "Jacksonville", "Houston", "Phoenix",
+  "Birmingham", "Hoover", "Vestavia Hills", "Alabaster", "Bessemer", "Homewood",
+  "Pelham", "Trussville", "Mountain Brook", "Helena", "Center Point", "Hueytown",
 ];
 
 export default function Home() {
@@ -113,8 +113,8 @@ export default function Home() {
                 Get Free Estimate
                 <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </a>
-              <a href="tel:+15551234567" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-4 text-sm font-semibold text-foreground shadow-soft transition hover:border-primary hover:text-secondary">
-                <Phone className="h-4 w-4 text-accent" /> (555) 123-4567
+              <a href="tel:+16592814098" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-4 text-sm font-semibold text-foreground shadow-soft transition hover:border-primary hover:text-secondary">
+                <Phone className="h-4 w-4 text-accent" /> (659) 281-4098
               </a>
             </div>
 
@@ -144,7 +144,7 @@ export default function Home() {
                 ))}
               </div>
               <p className="mt-2 text-sm leading-snug text-foreground">"Best cleaning service I've ever hired — by a mile."</p>
-              <p className="mt-2 text-xs text-muted-foreground">— Megan R., Orlando FL</p>
+              <p className="mt-2 text-xs text-muted-foreground">— Megan R., Birmingham AL</p>
             </div>
 
             <div className="absolute -right-4 top-8 hidden rounded-2xl border border-border bg-card px-4 py-3 shadow-card sm:flex sm:items-center sm:gap-3">
@@ -369,8 +369,8 @@ export default function Home() {
             <p className="mt-5 text-muted-foreground">
               We serve homeowners, renters and property managers across the metro. Don't see your city? Call us — we may still be able to help.
             </p>
-            <a href="tel:+15551234567" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-secondary">
-              <Phone className="h-4 w-4" /> Check availability — (555) 123-4567
+            <a href="tel:+16592814098" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-secondary">
+              <Phone className="h-4 w-4" /> Check availability — (659) 281-4098
             </a>
           </div>
           <div className="md:col-span-7">
@@ -399,7 +399,7 @@ export default function Home() {
 
             <div className="mt-10 space-y-5">
               {[
-                { icon: Phone, label: "Call or text", value: "(555) 123-4567", href: "tel:+15551234567" },
+                { icon: Phone, label: "Call or text", value: "(659) 281-4098", href: "tel:+16592814098" },
                 { icon: Mail, label: "Email", value: "hello@cristianecleaning.com", href: "mailto:hello@cristianecleaning.com" },
                 { icon: Clock, label: "Hours", value: "Mon–Sat · 7am to 7pm" },
                 { icon: MapPin, label: "Serving", value: "Homeowners across the U.S." },
@@ -473,7 +473,7 @@ export default function Home() {
           <div className="md:col-span-3">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-foreground">Contact</p>
             <ul className="mt-4 space-y-2.5 text-sm text-muted-foreground">
-              <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-accent" /> (555) 123-4567</li>
+              <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-accent" /> (659) 281-4098</li>
               <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-accent" /> hello@cristianecleaning.com</li>
               <li className="flex items-center gap-2"><Clock className="h-4 w-4 text-accent" /> Mon–Sat · 7am–7pm</li>
             </ul>
