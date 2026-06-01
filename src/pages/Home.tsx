@@ -29,8 +29,9 @@ import { BeforeAfter } from "@/components/site/BeforeAfter";
 import { QuoteForm } from "@/components/site/QuoteForm";
 import heroImg from "@/assets/hero-living-room.jpg";
 import cleanerImg from "@/assets/cleaner-portrait.jpeg";
-import beforeQuarto from "@/assets/quarto-antes.jpeg";
-import afterQuarto from "@/assets/quarto-depois.jpeg";
+import photoQuarto from "@/assets/QUARTO.jpeg";
+import photoCozinha from "@/assets/Cozinha.jpeg";
+import photoBanheiro from "@/assets/BANHEIRO.jpeg";
 import logoImg from "@/assets/logo.png";
 
 const businessJsonLd = {
@@ -218,14 +219,28 @@ export default function Home() {
               See the difference professional cleaning makes.
             </h2>
             <p className="mt-5 text-muted-foreground">
-              Drag the slider on each photo. These are real homes cleaned by our team — no staging, no filters.
+              These are real homes cleaned by our team — no staging, no filters.
             </p>
           </div>
 
-          <div className="mt-14 mx-auto max-w-2xl">
-            <BeforeAfter before={beforeQuarto} after={afterQuarto} alt="Bedroom" />
-            <p className="mt-3 text-sm font-medium text-foreground/80 text-center">Bedroom — Deep Clean</p>
-          </div>
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {[
+              { img: photoQuarto, label: "Bedroom — Deep Clean" },
+              { img: photoCozinha, label: "Kitchen — Deep Clean" },
+              { img: photoBanheiro, label: "Bathroom — Move-Out" },
+            ].map((item) => (
+              <div key={item.label} className="group overflow-hidden rounded-2xl shadow-card">
+                <div className="overflow-hidden rounded-2xl">
+                  <img
+                    src={item.img}
+                    alt={item.label}
+                    className="w-full object-cover transition duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+                <p className="mt-3 text-sm font-medium text-foreground/80 text-center">{item.label}</p>
+              </div>
+            ))}
         </div>
       </section>
 
