@@ -6,9 +6,9 @@ const schema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(80),
   phone: z.string().trim().min(7, "Enter a valid phone").max(20),
   email: z.string().trim().email("Enter a valid email").max(120),
-  address: z.string().trim().min(5, "Enter your address").max(160),
+  zipcode: z.string().trim().min(5, "Enter your zip code").max(20),
   service: z.string().min(1, "Choose a service"),
-  message: z.string().max(800).optional().or(z.literal("")),
+  message: z.string().trim().min(2, "Please tell us about your home").max(800),
 });
 
 export function QuoteForm() {
@@ -19,6 +19,13 @@ export function QuoteForm() {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const data = Object.fromEntries(fd.entries());
+    
+    // Honeypot check for anti-bot
+    if (data._botcheck) {
+      setSent(true);
+      return;
+    }
+
     const parsed = schema.safeParse(data);
     if (!parsed.success) {
       const errs: Record<string, string> = {};
@@ -50,6 +57,7 @@ export function QuoteForm() {
 
   return (
     <form onSubmit={onSubmit} noValidate className="grid gap-5">
+      <input type="text" name="_botcheck" className="sr-only" tabIndex={-1} autoComplete="off" />
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label className={label} htmlFor="name">Full name</label>
@@ -73,27 +81,27 @@ export function QuoteForm() {
           <label className={label} htmlFor="service">Cleaning type</label>
           <select id="service" name="service" defaultValue="" className={field}>
             <option value="" disabled>Select a service</option>
-            <option>House Cleaning</option>
+            <option>Standard Cleaning</option>
+            <option>Move-In/Move-Out</option>
+            <option>Post-Construction</option>
             <option>Deep Cleaning</option>
-            <option>Move-In Cleaning</option>
-            <option>Move-Out Cleaning</option>
-            <option>Recurring Cleaning</option>
-            <option>Apartment Cleaning</option>
-            <option>Post-Construction Cleaning</option>
+            <option>Commercial</option>
+            <option>Office</option>
           </select>
           {errors.service && <p className="mt-1 text-xs text-destructive">{errors.service}</p>}
         </div>
       </div>
 
       <div>
-        <label className={label} htmlFor="address">Service address</label>
-        <input id="address" name="address" className={field} placeholder="123 Maple St, City, ST" />
-        {errors.address && <p className="mt-1 text-xs text-destructive">{errors.address}</p>}
+        <label className={label} htmlFor="zipcode">Zip Code</label>
+        <input id="zipcode" name="zipcode" className={field} placeholder="35242" />
+        {errors.zipcode && <p className="mt-1 text-xs text-destructive">{errors.zipcode}</p>}
       </div>
 
       <div>
-        <label className={label} htmlFor="message">Tell us about your home (optional)</label>
+        <label className={label} htmlFor="message">Tell us about your home</label>
         <textarea id="message" name="message" rows={4} className={field} placeholder="Square footage, bedrooms, pets, special requests…" />
+        {errors.message && <p className="mt-1 text-xs text-destructive">{errors.message}</p>}
       </div>
 
       <button
