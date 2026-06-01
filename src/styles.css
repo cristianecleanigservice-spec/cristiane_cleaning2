@@ -43,8 +43,8 @@
   --shadow-lifted: 0 4px 8px rgba(36, 24, 60, 0.06), 0 32px 60px -20px rgba(36, 24, 60, 0.18);
   --shadow-glow: 0 20px 60px -20px rgba(142, 58, 143, 0.35);
 
-  --gradient-brand: linear-gradient(135deg, #8A8FC2 0%, #8E3A8F 100%);
-  --gradient-fresh: linear-gradient(135deg, #8A8FC2 0%, #7ABF45 100%);
+  --gradient-brand: linear-gradient(135deg, #657393 0%, #8C248A 100%);
+  --gradient-fresh: linear-gradient(135deg, #657393 0%, #8BC63E 100%);
   --gradient-soft: linear-gradient(180deg, #ffffff 0%, #f6f5fb 100%);
 }
 
@@ -63,17 +63,17 @@
   --popover: #ffffff;
   --popover-foreground: #1c1530;
 
-  /* Brand: soft lavender blue */
-  --primary: #6f74ad;
+  /* Brand: slate blue */
+  --primary: #657393;
   --primary-foreground: #ffffff;
-  --primary-soft: #eceaf6;
+  --primary-soft: #eceef4;
 
   /* Brand: purple */
-  --secondary: #8E3A8F;
+  --secondary: #8C248A;
   --secondary-foreground: #ffffff;
 
   /* Brand: fresh green */
-  --accent: #6ab23a;
+  --accent: #8BC63E;
   --accent-foreground: #0e2410;
 
   --muted: #f3f2f8;
@@ -84,7 +84,7 @@
 
   --border: #e7e4ef;
   --input: #e7e4ef;
-  --ring: #8A8FC2;
+  --ring: #657393;
 }
 
 @layer base {

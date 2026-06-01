@@ -211,24 +211,7 @@ export default function Home() {
       {/* BEFORE & AFTER */}
       <section id="results" className="bg-surface py-20 md:py-28">
         <div className="container-page">
-          <div className="mx-auto max-w-3xl text-center flex flex-col items-center">
-            <a 
-              href="https://share.google/oJpI6MbLBTro4E3Qn" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="mb-8 inline-flex items-center gap-3 rounded-full border border-border bg-card px-5 py-2.5 shadow-soft transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
-            >
-              <span className="flex items-center gap-1.5 font-semibold text-foreground">
-                <svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                Google Reviews
-              </span>
-              <div className="h-4 w-[1px] bg-border"></div>
-              <div className="flex text-[#FBBC05]">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={`g-${i}`} className="h-4 w-4 fill-current" />
-                ))}
-              </div>
-            </a>
+          <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-secondary">Real results</p>
             <h2 className="mt-3 text-balance text-4xl leading-[1.05] md:text-5xl">
               See the difference professional cleaning makes.
@@ -294,41 +277,14 @@ export default function Home() {
       {/* TESTIMONIALS */}
       <section id="reviews" className="bg-surface py-20 md:py-28">
         <div className="container-page">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div className="max-w-xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-secondary">Reviews</p>
-              <h2 className="mt-3 text-balance text-4xl leading-[1.05] md:text-5xl">
-                A 5-star rated cleaning service.
-              </h2>
-            </div>
-            <div className="flex items-center gap-3 rounded-full border border-border bg-card px-5 py-3 shadow-soft">
-              <div className="flex text-accent">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
-                ))}
-              </div>
-              <p className="text-sm font-semibold">5.0 average · 187 reviews</p>
-            </div>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-secondary">Reviews</p>
+            <h2 className="mt-3 text-balance text-4xl leading-[1.05] md:text-5xl">
+              See what our clients are saying.
+            </h2>
           </div>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {reviews.map((r) => (
-              <figure key={r.name} className="relative flex flex-col gap-5 rounded-2xl border border-border bg-card p-7 shadow-soft">
-                <Quote className="h-7 w-7 text-primary-soft" fill="currentColor" />
-                <blockquote className="text-base leading-relaxed text-foreground">"{r.text}"</blockquote>
-                <figcaption className="mt-auto flex items-center justify-between border-t border-border pt-4">
-                  <div>
-                    <p className="text-sm font-semibold">{r.name}</p>
-                    <p className="text-xs text-muted-foreground">{r.city}</p>
-                  </div>
-                  <div className="flex text-accent">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} className="h-3.5 w-3.5 fill-current" />
-                    ))}
-                  </div>
-                </figcaption>
-              </figure>
-            ))}
+          <div className="mt-12 w-full min-h-[400px]">
+            <div className="elfsight-app-01833423-a7d8-4e0a-976d-e4bd4bf76747" data-elfsight-app-lazy></div>
           </div>
         </div>
       </section>
