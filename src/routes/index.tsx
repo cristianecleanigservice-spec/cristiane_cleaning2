@@ -7,7 +7,7 @@ import {
   Mail,
   MapPin,
   Clock,
-  Home,
+  Home as HomeIcon,
   Droplets,
   Truck,
   PackageOpen,
