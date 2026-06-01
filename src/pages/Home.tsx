@@ -21,6 +21,8 @@ import {
   Facebook,
   Award,
   Leaf,
+  Building2,
+  Briefcase,
 } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { BeforeAfter } from "@/components/site/BeforeAfter";
@@ -50,12 +52,12 @@ const businessJsonLd = {
 };
 
 const services = [
-  { icon: HomeIcon, title: "House Cleaning", desc: "Top-to-bottom regular cleans that keep every room fresh and guest-ready." },
-  { icon: Droplets, title: "Deep Cleaning", desc: "Detail work on baseboards, grout, vents and the spots routine cleans miss." },
-  { icon: Truck, title: "Move-In Cleaning", desc: "Start your new chapter in a sanitized, sparkling-clean home from day one." },
-  { icon: PackageOpen, title: "Move-Out Cleaning", desc: "Leave your old place spotless and get your full security deposit back." },
-  { icon: CalendarHeart, title: "Recurring Cleaning", desc: "Weekly, bi-weekly or monthly visits on a schedule that fits your life." },
+  { icon: HomeIcon, title: "Standard Cleaning", desc: "Top-to-bottom regular cleans that keep every room fresh and guest-ready." },
+  { icon: PackageOpen, title: "Move-In/Move-Out", desc: "Start fresh or leave your old place spotless." },
   { icon: HardHat, title: "Post-Construction", desc: "Dust, debris and residue removal after remodels, builds and renovations." },
+  { icon: Droplets, title: "Deep Cleaning", desc: "Detail work on baseboards, grout, vents and the spots routine cleans miss." },
+  { icon: Building2, title: "Commercial", desc: "Professional cleaning for businesses to maintain a pristine, welcoming environment." },
+  { icon: Briefcase, title: "Office", desc: "Keep your workspace clean, sanitized, and productive for your entire team." },
 ];
 
 const reasons = [
