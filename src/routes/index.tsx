@@ -81,7 +81,7 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { icon: Home, title: "House Cleaning", desc: "Top-to-bottom regular cleans that keep every room fresh and guest-ready." },
+  { icon: HomeIcon, title: "House Cleaning", desc: "Top-to-bottom regular cleans that keep every room fresh and guest-ready." },
   { icon: Droplets, title: "Deep Cleaning", desc: "Detail work on baseboards, grout, vents and the spots routine cleans miss." },
   { icon: Truck, title: "Move-In Cleaning", desc: "Start your new chapter in a sanitized, sparkling-clean home from day one." },
   { icon: PackageOpen, title: "Move-Out Cleaning", desc: "Leave your old place spotless and get your full security deposit back." },
