@@ -443,7 +443,7 @@ export default function Home() {
         <div className="border-t border-border">
           <div className="container-page flex flex-col items-center justify-between gap-3 py-6 text-xs text-muted-foreground sm:flex-row">
             <p>© {new Date().getFullYear()} Cristiane Cleaning Services. All rights reserved.</p>
-            <p>Fully insured & bonded · Licensed residential cleaning</p>
+            <p>Developed by <a href="https://agenciaadcompany.com.br/" target="_blank" rel="noopener noreferrer" className="font-semibold text-secondary hover:underline">AD Company</a></p>
           </div>
         </div>
       </footer>
