@@ -398,10 +398,10 @@ export default function Home() {
               A family-led residential cleaning company devoted to making American homes shine — one room at a time.
             </p>
             <div className="mt-5 flex gap-3">
-              <a aria-label="Instagram" href="#" className="grid h-10 w-10 place-items-center rounded-full border border-border text-foreground/70 transition hover:border-secondary hover:text-secondary">
+              <a aria-label="Instagram" href="https://www.instagram.com/crist_cleaning/" target="_blank" rel="noopener noreferrer" className="grid h-10 w-10 place-items-center rounded-full border border-border text-foreground/70 transition hover:border-secondary hover:text-secondary">
                 <Instagram className="h-4 w-4" />
               </a>
-              <a aria-label="Facebook" href="#" className="grid h-10 w-10 place-items-center rounded-full border border-border text-foreground/70 transition hover:border-secondary hover:text-secondary">
+              <a aria-label="Facebook" href="https://www.facebook.com/profile.php?id=61588045814894" target="_blank" rel="noopener noreferrer" className="grid h-10 w-10 place-items-center rounded-full border border-border text-foreground/70 transition hover:border-secondary hover:text-secondary">
                 <Facebook className="h-4 w-4" />
               </a>
             </div>
