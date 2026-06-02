@@ -352,45 +352,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONTACT */}
-      <section id="quote" className="bg-surface py-20 md:py-28">
-        <div className="container-page grid gap-14 lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-secondary">Get in touch</p>
-            <h2 className="mt-3 text-balance text-4xl leading-[1.05] md:text-5xl">
-              Request your free, no-obligation estimate.
-            </h2>
-            <p className="mt-5 max-w-md text-muted-foreground">
-              Tell us a little about your home and we'll text back a flat-rate quote within one business hour.
-            </p>
-
-            <div className="mt-10 space-y-5">
-              {[
-                { icon: Phone, label: "Call or text", value: "(659) 281-4098", href: "tel:+16592814098" },
-                { icon: Mail, label: "Email", value: "contact@cristianecleaningservice.com", href: "mailto:contact@cristianecleaningservice.com" },
-                { icon: Clock, label: "Hours", value: "Mon–Sat · 7am to 7pm" },
-                { icon: MapPin, label: "Serving", value: "Homeowners across the U.S." },
-              ].map((c) => (
-                <a key={c.label} href={c.href ?? "#"} className="flex items-start gap-4 rounded-2xl border border-border bg-card p-4 shadow-soft transition hover:border-primary/40">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary-soft text-secondary">
-                    <c.icon className="h-5 w-5" />
-                  </span>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{c.label}</p>
-                    <p className="text-sm font-semibold text-foreground">{c.value}</p>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <div className="lg:col-span-7">
-            <div className="rounded-[2rem] border border-border bg-card p-7 shadow-card md:p-10">
-              <QuoteForm />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* FOOTER */}
       <footer className="border-t border-border bg-card">
