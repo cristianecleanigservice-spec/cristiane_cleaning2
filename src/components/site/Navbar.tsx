@@ -49,7 +49,7 @@ export function Navbar() {
 
         <button
           aria-label="Toggle menu"
-          className="grid h-10 w-10 place-items-center rounded-lg border border-border lg:hidden"
+          className="absolute right-4 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-lg border border-border lg:hidden"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
