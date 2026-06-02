@@ -302,7 +302,7 @@ export default function Home() {
 
       {/* SPECIAL OFFER */}
       <section className="container-page py-20 md:py-24">
-        <div className="relative overflow-hidden rounded-[2rem] bg-[var(--gradient-brand)] p-10 text-primary-foreground shadow-glow md:p-16">
+        <div className="relative overflow-hidden rounded-[2rem] bg-[#D803AB] p-10 text-primary-foreground shadow-glow md:p-16">
           <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
           <div className="absolute -bottom-24 -left-10 h-72 w-72 rounded-full bg-accent/30 blur-3xl" />
 
