@@ -17,7 +17,7 @@ export function Navbar() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-xl">
       <div className="container-page flex h-18 items-center justify-between gap-6 py-4 text-center">
         <a href="#top" className="flex items-center">
-          <img src={logoImg} alt="Cristiane Cleaning Services" className="h-21 w-auto" />
+          <img src={logoImg} alt="Cristiane Cleaning Services" className="h-21 w-auto text-center" />
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex">
