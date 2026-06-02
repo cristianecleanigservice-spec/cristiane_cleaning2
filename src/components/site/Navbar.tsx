@@ -15,9 +15,9 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-xl">
-      <div className="container-page flex h-18 items-center justify-between gap-6 py-4 text-center">
+      <div className="container-page relative flex h-18 items-center justify-center gap-6 py-4 lg:justify-between">
         <a href="#top" className="flex items-center">
-          <img src={logoImg} alt="Cristiane Cleaning Services" className="h-21 w-auto text-center" />
+          <img src={logoImg} alt="Cristiane Cleaning Services" className="h-21 w-auto" />
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex">
@@ -49,7 +49,7 @@ export function Navbar() {
 
         <button
           aria-label="Toggle menu"
-          className="grid h-10 w-10 place-items-center rounded-lg border border-border lg:hidden"
+          className="absolute right-4 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-lg border border-border lg:hidden"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
