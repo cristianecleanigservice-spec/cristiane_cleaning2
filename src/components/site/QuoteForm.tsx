@@ -128,9 +128,10 @@ export function QuoteForm() {
 
       <button
         type="submit"
-        className="mt-1 inline-flex items-center justify-center rounded-full bg-secondary px-7 py-4 text-sm font-semibold text-secondary-foreground shadow-glow transition hover:brightness-110"
+        disabled={submitting}
+        className="mt-1 inline-flex items-center justify-center rounded-full bg-secondary px-7 py-4 text-sm font-semibold text-secondary-foreground shadow-glow transition hover:brightness-110 disabled:opacity-60"
       >
-        Request My Free Estimate
+        {submitting ? "Sending…" : "Request My Free Estimate"}
       </button>
       <p className="text-center text-xs text-muted-foreground">
         No spam, ever. We reply within one business hour, 7 days a week.
