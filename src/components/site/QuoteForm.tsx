@@ -15,11 +15,14 @@ export function QuoteForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sent, setSent] = useState(false);
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const [submitting, setSubmitting] = useState(false);
+
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
     const data = Object.fromEntries(fd.entries());
-    
+
     // Honeypot check for anti-bot
     if (data._botcheck) {
       setSent(true);
@@ -36,7 +39,26 @@ export function QuoteForm() {
       return;
     }
     setErrors({});
-    setSent(true);
+    setSubmitting(true);
+    try {
+      fd.append("access_key", "bc046721-0ee0-43c0-8f73-eb60d00c65c4");
+      fd.append("subject", "New Quote Request - Cristiane Cleaning");
+      fd.append("from_name", "Cristiane Cleaning Website");
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: fd,
+      });
+      const json = await res.json();
+      if (json.success) {
+        setSent(true);
+      } else {
+        setErrors({ message: json.message || "Could not send. Please try again." });
+      }
+    } catch (err) {
+      setErrors({ message: "Network error. Please try again." });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (sent) {
@@ -106,9 +128,10 @@ export function QuoteForm() {
 
       <button
         type="submit"
-        className="mt-1 inline-flex items-center justify-center rounded-full bg-secondary px-7 py-4 text-sm font-semibold text-secondary-foreground shadow-glow transition hover:brightness-110"
+        disabled={submitting}
+        className="mt-1 inline-flex items-center justify-center rounded-full bg-secondary px-7 py-4 text-sm font-semibold text-secondary-foreground shadow-glow transition hover:brightness-110 disabled:opacity-60"
       >
-        Request My Free Estimate
+        {submitting ? "Sending…" : "Request My Free Estimate"}
       </button>
       <p className="text-center text-xs text-muted-foreground">
         No spam, ever. We reply within one business hour, 7 days a week.
