@@ -227,8 +227,38 @@ export default function Home() {
               See what our clients are saying.
             </h2>
           </div>
-          <div className="mt-12 w-full min-h-[400px]">
-            <div className="elfsight-app-01833423-a7d8-4e0a-976d-e4bd4bf76747" data-elfsight-app-lazy></div>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {reviews.map((r) => (
+              <article key={r.name} className="relative flex flex-col gap-4 rounded-2xl border border-border bg-card p-7 shadow-soft">
+                <div className="flex items-center gap-2">
+                  <img src="https://www.gstatic.com/images/branding/product/1x/googleg_48dp.png" alt="Google" className="h-5 w-5" loading="lazy" />
+                  <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Google Review</span>
+                </div>
+                <div className="flex gap-0.5 text-secondary">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-current" strokeWidth={0} />
+                  ))}
+                </div>
+                <Quote className="absolute right-5 top-5 h-6 w-6 text-muted-foreground/30" />
+                <p className="text-sm leading-relaxed text-muted-foreground">"{r.text}"</p>
+                <div className="mt-auto">
+                  <p className="font-semibold">{r.name}</p>
+                  <p className="text-xs text-muted-foreground">{r.city}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <a
+              href="https://www.google.com/search?q=Cristiane+Cleaning+Services+Birmingham+reviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-sm font-semibold shadow-soft hover:border-secondary/40"
+            >
+              <img src="https://www.gstatic.com/images/branding/product/1x/googleg_48dp.png" alt="" className="h-4 w-4" />
+              See all reviews on Google
+              <ArrowRight className="h-3.5 w-3.5" />
+            </a>
           </div>
         </div>
       </section>
