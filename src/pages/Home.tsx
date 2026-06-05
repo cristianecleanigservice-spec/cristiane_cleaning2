@@ -453,3 +453,15 @@ export default function Home() {
     </main>
   );
 }
+
+function TrustmaryWidget() {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!ref.current) return;
+    const s = document.createElement("script");
+    s.src = "https://widget.trustmary.com/qjCrIGoy-";
+    s.async = true;
+    ref.current.appendChild(s);
+  }, []);
+  return <div ref={ref} />;
+}
