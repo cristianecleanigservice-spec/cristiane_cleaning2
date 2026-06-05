@@ -458,10 +458,18 @@ function TrustmaryWidget() {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (!ref.current) return;
+    if (ref.current.dataset.loaded === "true") return;
+    ref.current.dataset.loaded = "true";
     const s = document.createElement("script");
     s.src = "https://widget.trustmary.com/qjCrIGoy-";
     s.async = true;
     ref.current.appendChild(s);
+    return () => {
+      if (ref.current) {
+        ref.current.innerHTML = "";
+        delete ref.current.dataset.loaded;
+      }
+    };
   }, []);
   return <div ref={ref} />;
 }
