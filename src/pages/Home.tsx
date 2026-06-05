@@ -24,6 +24,7 @@ import {
   Building2,
   Briefcase,
 } from "lucide-react";
+import { useEffect, useRef } from "react";
 import { Navbar } from "@/components/site/Navbar";
 import { BeforeAfter } from "@/components/site/BeforeAfter";
 import { QuoteForm } from "@/components/site/QuoteForm";
@@ -228,7 +229,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="mt-12 w-full min-h-[400px]">
-            <div id="trustmary-widget-qjCrIGoy-"></div>
+            <TrustmaryWidget />
           </div>
         </div>
       </section>
