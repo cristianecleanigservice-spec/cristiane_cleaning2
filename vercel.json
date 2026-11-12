@@ -1,9 +1,5 @@
 {
-  "redirects": [
-    {
-      "source": "/reviews",
-      "destination": "https://darkcyan-ferret-711348.hostingersite.com/review/",
-      "permanent": false
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
